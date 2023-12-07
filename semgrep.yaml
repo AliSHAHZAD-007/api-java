@@ -1,0 +1,8 @@
+# semgrep.yaml for Java
+rules:
+  - id: insecure-logger
+    patterns:
+      - pattern: |
+          import java.util.logging.Logger;
+          Logger.getLogger("InsecureLogger");
+    message: "Avoid using insecure java.util.logging.Logger"
